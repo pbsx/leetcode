@@ -3,16 +3,7 @@
  * @return {number}
  */
 var pivotInteger = function (n) {
-    let rightSum = 0
-    let leftSum = (n * (n + 1)) / 2
-    while (n) {
-        rightSum += n
-        if (leftSum === rightSum) {
-            return n
-        }
-        leftSum -= n
-        n--
-    }
-
-    return -1
+    let sum = n * (n + 1) / 2
+    let x = parseInt(Math.sqrt(sum))
+    return x * x === sum ? x : -1
 };
