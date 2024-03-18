@@ -14,7 +14,6 @@ var findPeakElement = function (nums) {
             return left
         }
         let mid = Math.floor(left + (right - left + 1) / 2)
-        console.log(left, right, mid)
 
         switch (mid) {
             case left: return nums[left] > nums[left + 1] ? left : left + 1
@@ -30,6 +29,5 @@ var findPeakElement = function (nums) {
                 }
             }
         }
-        console.log(left, right, mid)
     }
 };
