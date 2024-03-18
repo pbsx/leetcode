@@ -4,7 +4,7 @@
  */
 var findMinArrowShots = function (points) {
     points.sort(sortFn)
-    console.log(points)
+
     let c = null
     let end = points[0][1]
 
