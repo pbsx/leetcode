@@ -18,18 +18,13 @@ var reorderList = function (head) {
         slow = slow.next
         c++
     }
-
     let head2 = reverseLinkedList(slow)
-    let res = head
     while (head2.next && head.next) {
         let next = head.next
         head.next = new ListNode(head2.val, next)
         head = next
         head2 = head2.next
     }
-
-    console.log(res)
-
 };
 
 function reverseLinkedList(node) {
