@@ -3,8 +3,7 @@
  * @return {number[]}
  */
 var findDuplicates = function (nums) {
-    let length = nums.length
-    let count = new Array(length + 1).fill(0)
+    let count = new Array(nums.length + 1).fill(0)
 
     nums.forEach(num => { count[num] = count[num] + 1 })
 
