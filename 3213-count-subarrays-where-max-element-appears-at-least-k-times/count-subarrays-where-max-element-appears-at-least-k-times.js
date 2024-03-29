@@ -5,7 +5,7 @@
  */
 var countSubarrays = function (nums, k) {
     let max = Math.max(...nums)
-    let [left, right, maxCount, res] = [0, 0, 0, 0]
+    let [left, right, res] = [0, 0, 0]
     let length = nums.length
 
     while (right < length) {
