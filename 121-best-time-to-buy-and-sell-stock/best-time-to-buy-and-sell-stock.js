@@ -3,23 +3,13 @@
  * @return {number}
  */
 var maxProfit = function (prices) {
-    const days = prices.length
-    let maxArr = new Array(days)
-    let minArr = []
-    let max = prices[days - 1]
-    let min = prices[0]
-    for (let day = 0; day < days; day++) {
-        min = min > prices[day] ? prices[day] : min
-        max = max < prices[days - day - 1] ? prices[days - day - 1] : max
-        minArr.push(min)
-        maxArr[days - day - 1] = max
-    }
+    let buy = prices[0]
+    let profit = 0
 
-    let maxProfit = maxArr[0] - minArr[0]
-    for (let day = 1; day < days; day++) {
-        const profit = maxArr[day] - minArr[day]
-        maxProfit = maxProfit < profit ? profit : maxProfit
+    const totalDays = prices.length
+    for (let i = 1; i < totalDays; i++) {
+        profit = Math.max(profit, prices[i] - buy)
+        buy = Math.min(buy, prices[i])
     }
-
-    return maxProfit
+    return profit
 };
